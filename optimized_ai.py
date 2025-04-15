@@ -1,5 +1,6 @@
 import pandas as pd
 import pytz
+import streamlit as st
 from datetime import datetime, timedelta
 import numpy as np
 import ta
@@ -13,8 +14,9 @@ from contextlib import contextmanager
 from asyncio import Semaphore
 from aiohttp import TCPConnector
 import nest_asyncio
-from variable import s  # assuming this contains your stock symbols
-cnb = int(input("Enter the number of candles to check: "))
+from variable import s 
+# assuming this contains your stock symbols
+cnb = int(2)
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
@@ -229,6 +231,8 @@ if __name__ == "__main__":
     try:
         nest_asyncio.apply()
         asyncio.run(main())
+        st.write(buystocks)
+        st.write(sellstock)
         
         print('\nBuy Signals:')
         print(buystock)
