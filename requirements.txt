@@ -1,0 +1,10 @@
+pandas
+datetime
+numpy
+ta
+asyncio
+aiohttp
+nest_asyncio
+streamlit
+plotly
+pytz
